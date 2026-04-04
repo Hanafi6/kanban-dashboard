@@ -11,8 +11,6 @@ const AddTaskModal = ({ isEditing }) => {
     const [title, setTitle] = useState('');
     const [desc, setDesc] = useState('');
 
-    const [showConfirm, setShowConfirm] = useState(false);
-
     useEffect(() => {
         if (selectTaske) {
             setTitle(selectTaske.title);
@@ -25,26 +23,13 @@ const AddTaskModal = ({ isEditing }) => {
 
     if (!isModalOpen) return null;
 
-    const isDirty = isEditing && selectTaske && (
-        title !== (selectTaske.title || '') ||
-        desc !== (selectTaske.description || '')
-    );
-
-
-    const closeModalWithConfirm = () => {
-        if (isDirty) {
-            setShowConfirm(true);
-        } else {
-            closeModal();
-        }
-    }
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
 
         if (!title.trim()) return;
 
-        if (selectTaske) {
+        if (selectTaske && isEditing) {
             updateTask({
                 ...selectTaske,
                 title: title,
@@ -58,6 +43,7 @@ const AddTaskModal = ({ isEditing }) => {
                 column: 'backlog'
             };
             createTask(newTask);
+
         }
 
         setTitle('');
@@ -103,7 +89,7 @@ const AddTaskModal = ({ isEditing }) => {
                         </div>
 
                         <div className="modal-actions">
-                            <button type="button" className="btn-cancel" onClick={closeModalWithConfirm}>
+                            <button type="button" className="btn-cancel" onClick={closeModal}>
                                 Cancel
                             </button>
                             <button type="submit" className="btn-submit">
@@ -113,24 +99,6 @@ const AddTaskModal = ({ isEditing }) => {
                     </form>
                 </motion.div>
             </div>
-            <AnimatePresence key={'confirm'}>
-                {showConfirm && (
-                    <motion.div
-                        key={'confirm'}
-                        className="confirm-overlay"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                    >
-                        <div className="confirm-box">
-                            <div className="confirm-buttons">
-                                <button onClick={() => setShowConfirm(false)} className="btn-stay">كمل تعديل</button>
-                                <button onClick={closeModal} className="btn-leave">اخرج وإرمي التعديلات</button>
-                            </div>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
         </AnimatePresence>
     );
 };
