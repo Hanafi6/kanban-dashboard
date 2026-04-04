@@ -1,0 +1,25 @@
+.continer {
+    min-height: calc(100vh - 90px);
+    width: 95%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+    .continer {
+        width: 98%;
+        margin: 10px auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .continer {
+        width: 100%;
+        padding: 0 10px;
+        min-height: calc(100vh - 70px);
+        margin: 5px auto;
+    }
+}

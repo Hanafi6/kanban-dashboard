@@ -1,0 +1,43 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "إعداد هيكل المشروع",
+      "description": "تركيب Vite مع TypeScript وتجهيز الفولدرات الأساسية (store, hooks, components).",
+      "column": "in_progress"
+    },
+    {
+      "id": "2",
+      "title": "ربط Zustand و React Query",
+      "description": "عمل الـ Store لإدارة حالة البحث والـ Hooks لجلب البيانات من الـ API.",
+      "column": "backlog"
+    },
+    {
+      "id": "3",
+      "title": "برمجة الـ Drag and Drop",
+      "description": "استخدام مكتبة hello-pangea/dnd لنقل المهام بين الأعمدة الأربعة.",
+      "column": "done"
+    },
+    {
+      "id": "4",
+      "title": "إضافة خاصية البحث",
+      "description": "عمل فلترة للمهام بناءً على العنوان أو الوصف باستخدام React Query.",
+      "column": "backlog"
+    },
+    {
+      "id": "5",
+      "status": "in_progress"
+    },
+    {
+      "id": "TqOSDB5Fg1c",
+      "title": "تاسك جديد يباشا",
+      "description": "خنبتيشخهستبهخستيبسن",
+      "column": "done"
+    },
+    {
+      "id": "pgfELIEKEpo",
+      "status": "in_progress"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
