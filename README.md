@@ -3,7 +3,7 @@
 A professional, responsive Kanban-style ToDo application built with **React**, **Zustand**, and **TanStack Query**. Featuring smooth drag-and-drop interactions, custom themes, and optimistic updates.
 
 ## 🚀 Live Demo
-[Insert your /Netlify link here] *(Adding a live link is a big plus!)*
+https://kanavan1.netlify.app/ *(Adding a live link is a big plus!)*
 
 ## ✨ Features
 - **Full CRUD Operations:** Create, Read, Update, and Delete tasks seamlessly.
